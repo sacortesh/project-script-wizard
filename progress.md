@@ -8,8 +8,8 @@
 ## Phase 2 — Core Pages & Components
 - [x] Task 2.1: Build the site header / navigation
 - [x] Task 2.2: Build the site footer
-- [ ] Task 2.3: Build the home page
-- [ ] Task 2.4: Build the About page
+- [x] Task 2.3: Build the home page
+- [x] Task 2.4: Build the About page
 
 ## Phase 3 — Blog System (Astro Content Collections)
 - [ ] Task 3.1: Set up Astro content collections for blog posts
