@@ -21,10 +21,10 @@ function formatDate(date: Date) {
 <BaseLayout title={`${post.data.title} — Script Wizard`} description={post.data.description} image={post.data.image}>
   <article class="max-w-3xl mx-auto px-4 pt-16 pb-16">
     <!-- Post header -->
-    <header class="border border-neon-green/30 bg-bg-surface/60 p-6 sm:p-8 mb-8">
-      <p class="text-neon-green/60 text-xs sm:text-sm mb-3 tracking-widest uppercase">// post</p>
-      <h1 class="text-neon-green text-xl sm:text-3xl font-bold tracking-wider leading-tight">
-        <span class="text-neon-green/60">&gt;</span> {post.data.title}<span class="cursor-blink text-neon-cyan">_</span>
+    <header class="border border-neon-amber/30 bg-bg-surface/60 p-6 sm:p-8 mb-8">
+      <p class="text-neon-amber/60 text-xs sm:text-sm mb-3 tracking-widest uppercase">// post</p>
+      <h1 class="text-neon-amber text-xl sm:text-3xl font-bold tracking-wider leading-tight">
+        <span class="text-neon-amber/60">&gt;</span> {post.data.title}<span class="cursor-blink text-neon-cyan">_</span>
       </h1>
       <div class="mt-4 flex flex-col sm:flex-row sm:items-center gap-3 text-sm">
         <time class="text-text-muted/60 text-xs tracking-wide" datetime={post.data.date.toISOString()}>
@@ -32,7 +32,7 @@ function formatDate(date: Date) {
         </time>
         <div class="flex flex-wrap gap-2">
           {post.data.tags.map((tag: string) => (
-            <span class="text-neon-green/50 text-xs border border-neon-green/20 px-2 py-0.5">#{tag}</span>
+            <span class="text-neon-amber/50 text-xs border border-neon-amber/20 px-2 py-0.5">#{tag}</span>
           ))}
         </div>
       </div>
@@ -40,17 +40,17 @@ function formatDate(date: Date) {
     </header>
 
     <!-- Post content -->
-    <div class="prose prose-cyberpunk border border-neon-green/10 bg-bg-card/40 p-6 sm:p-8">
+    <div class="prose prose-cyberpunk border border-neon-amber/10 bg-bg-card/40 p-6 sm:p-8">
       <Content />
     </div>
 
     <!-- Back to blog -->
-    <div class="mt-10 border-t border-neon-green/10 pt-6">
+    <div class="mt-10 border-t border-neon-amber/10 pt-6">
       <a
         href="/blog"
-        class="text-neon-green text-sm tracking-wide hover:text-neon-cyan transition-colors"
+        class="text-neon-amber text-sm tracking-wide hover:text-neon-cyan transition-colors"
       >
-        <span class="text-neon-green/60">&gt;</span> cd /blog<span class="text-neon-green/40">_</span> →
+        <span class="text-neon-amber/60">&gt;</span> cd /blog<span class="text-neon-amber/40">_</span> →
       </a>
     </div>
   </article>

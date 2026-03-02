@@ -21,22 +21,22 @@ const tools = [
 <BaseLayout title="About — Script Wizard">
   <!-- Bio section -->
   <section class="max-w-5xl mx-auto px-4 pt-16 pb-12">
-    <div class="border border-neon-green/30 bg-bg-surface/60 p-6 sm:p-10">
-      <p class="text-neon-green/60 text-xs sm:text-sm mb-4 tracking-widest uppercase">// user profile loaded</p>
-      <h1 class="text-neon-green text-2xl sm:text-4xl font-bold tracking-wider mb-2">
-        <span class="text-neon-green/60">&gt;</span> about_me<span class="cursor-blink text-neon-cyan">_</span>
+    <div class="border border-neon-amber/30 bg-bg-surface/60 p-6 sm:p-10">
+      <p class="text-neon-amber/60 text-xs sm:text-sm mb-4 tracking-widest uppercase">// user profile loaded</p>
+      <h1 class="text-neon-amber text-2xl sm:text-4xl font-bold tracking-wider mb-2">
+        <span class="text-neon-amber/60">&gt;</span> about_me<span class="cursor-blink text-neon-cyan">_</span>
       </h1>
       <div class="mt-6 space-y-4 text-text-primary text-sm sm:text-base leading-relaxed">
         <p>
-          <span class="text-neon-green/60">&gt;</span> Welcome, wanderer. I'm a developer who lives in the terminal
+          <span class="text-neon-amber/60">&gt;</span> Welcome, wanderer. I'm a developer who lives in the terminal
           and writes code to make machines do the boring stuff.
         </p>
         <p>
-          <span class="text-neon-green/60">&gt;</span> This blog is my digital notebook — a place to share scripts,
+          <span class="text-neon-amber/60">&gt;</span> This blog is my digital notebook — a place to share scripts,
           automation tricks, and deep dives into the tools that make dev life better.
         </p>
         <p>
-          <span class="text-neon-green/60">&gt;</span> I believe in open source, reproducible environments,
+          <span class="text-neon-amber/60">&gt;</span> I believe in open source, reproducible environments,
           and the quiet satisfaction of a well-crafted shell script.
         </p>
       </div>
@@ -45,18 +45,18 @@ const tools = [
 
   <!-- S.P.E.C.I.A.L. Stats section -->
   <section class="max-w-5xl mx-auto px-4 pb-12">
-    <h2 class="text-neon-amber text-sm tracking-widest uppercase mb-6">
-      <span class="text-neon-amber/60">&gt;</span> S.P.E.C.I.A.L._stats<span class="text-neon-amber/40">_</span>
+    <h2 class="text-neon-green text-sm tracking-widest uppercase mb-6">
+      <span class="text-neon-green/60">&gt;</span> S.P.E.C.I.A.L._stats<span class="text-neon-green/40">_</span>
     </h2>
 
-    <div class="border border-neon-amber/30 bg-bg-surface/60 p-6 sm:p-8">
-      <p class="text-neon-amber/50 text-xs mb-6 tracking-wider uppercase">Vault-Tec Aptitude Assessment</p>
+    <div class="border border-neon-green/30 bg-bg-surface/60 p-6 sm:p-8">
+      <p class="text-neon-green/50 text-xs mb-6 tracking-wider uppercase">Vault-Tec Aptitude Assessment</p>
 
       <div class="flex flex-col gap-4">
         {stats.map(stat => (
           <div class="flex flex-col sm:flex-row sm:items-center gap-1 sm:gap-4">
             <div class="flex items-center gap-3 sm:w-48 shrink-0">
-              <span class="text-neon-amber font-bold text-lg w-5">{stat.letter}</span>
+              <span class="text-neon-green font-bold text-lg w-5">{stat.letter}</span>
               <span class="text-text-primary text-sm">{stat.label}</span>
             </div>
             <div class="flex items-center gap-3 flex-1">
@@ -65,13 +65,13 @@ const tools = [
                   <span
                     class={`inline-block w-3 h-4 border ${
                       i < stat.value
-                        ? 'border-neon-amber/80 bg-neon-amber/40'
-                        : 'border-neon-amber/20 bg-transparent'
+                        ? 'border-neon-green/80 bg-neon-green/40'
+                        : 'border-neon-green/20 bg-transparent'
                     }`}
                   />
                 ))}
               </div>
-              <span class="text-neon-amber/60 text-xs w-6 text-right">{stat.value}</span>
+              <span class="text-neon-green/60 text-xs w-6 text-right">{stat.value}</span>
             </div>
             <p class="text-text-muted text-xs sm:ml-4 hidden sm:block">{stat.description}</p>
           </div>

@@ -31,7 +31,7 @@
 - [x] Task 5.5: Final visual QA pass
 
 ## Phase 6 — Rebrand & Color Overhaul
-- [ ] Task 6.1: Swap primary color from neon-green to neon-amber
+- [x] Task 6.1: Swap primary color from neon-green to neon-amber
 - [ ] Task 6.2: Rename site from "script_wizard" to "thescriptwizard"
 - [ ] Task 6.3: Choose and configure domain
 
