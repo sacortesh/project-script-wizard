@@ -25,7 +25,7 @@
 
 ## Phase 5 — Polish & Deploy Readiness
 - [x] Task 5.1: Add SEO and OpenGraph meta tags
-- [ ] Task 5.2: Add a 404 page (terminal/cyberpunk-style, no Fallout references)
+- [x] Task 5.2: Add a 404 page (terminal/cyberpunk-style, no Fallout references)
 - [ ] Task 5.3: Create netlify.toml deployment config
 - [ ] Task 5.4: Add a README with setup and usage instructions
 - [ ] Task 5.5: Final visual QA pass

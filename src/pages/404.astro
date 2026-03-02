@@ -1,0 +1,59 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout title="404 — Page Not Found">
+  <section class="max-w-3xl mx-auto px-4 pt-16 pb-16 flex flex-col items-center">
+    <div class="border border-neon-magenta/40 bg-bg-surface/60 p-6 sm:p-10 w-full">
+      <!-- Terminal header bar -->
+      <div class="flex items-center gap-2 border-b border-neon-magenta/30 pb-3 mb-6">
+        <span class="text-neon-magenta/60 text-xs tracking-widest uppercase">// terminal output</span>
+      </div>
+
+      <!-- Error code ASCII art -->
+      <pre class="text-neon-magenta text-xs sm:text-sm leading-tight mb-8 overflow-x-auto"><code>██╗  ██╗ ██████╗ ██╗  ██╗
+██║  ██║██╔═████╗██║  ██║
+███████║██║██╔██║███████║
+╚════██║████╔╝██║╚════██║
+     ██║╚██████╔╝     ██║
+     ╚═╝ ╚═════╝      ╚═╝</code></pre>
+
+      <!-- Error messages -->
+      <div class="space-y-3 text-sm sm:text-base">
+        <p class="text-neon-magenta">
+          <span class="text-neon-magenta/60">&gt;</span> ERROR 404: PAGE NOT FOUND
+        </p>
+        <p class="text-text-muted">
+          <span class="text-neon-magenta/60">&gt;</span> The requested path does not match any known route.
+        </p>
+        <p class="text-text-muted">
+          <span class="text-neon-magenta/60">&gt;</span> Possible causes: broken link, expired bookmark, or mistyped URL.
+        </p>
+        <p class="text-neon-amber/70 mt-6">
+          <span class="text-neon-amber/40">&gt;</span> SUGGESTION: Navigate to a valid endpoint.
+        </p>
+      </div>
+
+      <!-- Navigation links -->
+      <div class="mt-8 flex flex-wrap gap-4">
+        <a
+          href="/"
+          class="inline-block border border-neon-green/60 text-neon-green text-sm px-6 py-2 tracking-wide hover:bg-neon-green/10 transition-colors"
+        >
+          <span class="text-neon-green/60">&gt;</span> return_home<span class="text-neon-green/40">_</span>
+        </a>
+        <a
+          href="/blog"
+          class="inline-block border border-neon-cyan/60 text-neon-cyan text-sm px-6 py-2 tracking-wide hover:bg-neon-cyan/10 transition-colors"
+        >
+          <span class="text-neon-cyan/60">&gt;</span> browse_posts<span class="text-neon-cyan/40">_</span>
+        </a>
+      </div>
+    </div>
+
+    <!-- Terminal status line -->
+    <p class="text-text-muted/40 text-xs mt-6 tracking-widest uppercase">
+      [ status: 404 ] [ route: unknown ] [ exit_code: 1 ]
+    </p>
+  </section>
+</BaseLayout>
