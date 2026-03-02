@@ -1,0 +1,85 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { getCollection } from 'astro:content';
+
+const allPosts = await getCollection('blog', ({ data }) => !data.draft);
+const posts = allPosts.sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf());
+
+function formatDate(date: Date) {
+  return date.toLocaleDateString('en-US', { year: 'numeric', month: 'short', day: 'numeric' });
+}
+---
+
+<BaseLayout title="Blog — Script Wizard">
+  <!-- Page header -->
+  <section class="max-w-5xl mx-auto px-4 pt-16 pb-8">
+    <div class="border border-neon-green/30 bg-bg-surface/60 p-6 sm:p-8">
+      <p class="text-neon-green/60 text-xs sm:text-sm mb-3 tracking-widest uppercase">// blog directory</p>
+      <h1 class="text-neon-green text-2xl sm:text-3xl font-bold tracking-wider">
+        <span class="text-neon-green/60">&gt;</span> ls -la /posts<span class="cursor-blink text-neon-cyan">_</span>
+      </h1>
+      <p class="text-text-muted text-sm mt-3">
+        <span class="text-neon-green/60">&gt;</span> {posts.length} entries found. Sorted by date (newest first).
+      </p>
+    </div>
+  </section>
+
+  <!-- Post listing -->
+  <section class="max-w-5xl mx-auto px-4 pb-16">
+    <h2 class="text-neon-amber text-sm tracking-widest uppercase mb-6">
+      <span class="text-neon-amber/60">&gt;</span> all_entries<span class="text-neon-amber/40">_</span>
+    </h2>
+
+    <div class="flex flex-col gap-4">
+      {posts.map((post, i) => (
+        <a href={`/blog/${post.id}`} class="group block border border-neon-green/20 bg-bg-card/60 p-5 hover:border-neon-cyan/50 transition-colors">
+          <div class="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-2">
+            <div class="flex-1">
+              <h3 class="text-text-primary group-hover:text-neon-cyan transition-colors text-base sm:text-lg">
+                <span class="text-neon-green/40 mr-2">[{String(i).padStart(2, '0')}]</span>{post.data.title}
+              </h3>
+              <p class="text-text-muted text-sm mt-2 leading-relaxed">{post.data.description}</p>
+            </div>
+            <time class="text-text-muted/60 text-xs tracking-wide whitespace-nowrap sm:mt-1" datetime={post.data.date.toISOString()}>
+              {formatDate(post.data.date)}
+            </time>
+          </div>
+          <div class="mt-3 flex flex-wrap gap-2">
+            {post.data.tags.map(tag => (
+              <span class="text-neon-green/50 text-xs border border-neon-green/20 px-2 py-0.5">#{tag}</span>
+            ))}
+          </div>
+        </a>
+      ))}
+    </div>
+
+    {posts.length === 0 && (
+      <div class="border border-neon-amber/30 bg-bg-card/60 p-6 text-center">
+        <p class="text-neon-amber text-sm">
+          <span class="text-neon-amber/60">&gt;</span> ERROR: No entries found in /posts/<span class="text-neon-amber/40">_</span>
+        </p>
+        <p class="text-text-muted text-xs mt-2">Check back later for new content.</p>
+      </div>
+    )}
+
+    <div class="mt-10 border-t border-neon-green/10 pt-6">
+      <a
+        href="/"
+        class="text-neon-green text-sm tracking-wide hover:text-neon-cyan transition-colors"
+      >
+        <span class="text-neon-green/60">&gt;</span> cd /<span class="text-neon-green/40">_</span> →
+      </a>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  @keyframes blink {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0; }
+  }
+
+  .cursor-blink {
+    animation: blink 1s step-end infinite;
+  }
+</style>
