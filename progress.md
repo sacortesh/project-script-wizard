@@ -16,7 +16,7 @@
 - [x] Task 3.2: Create sample blog posts
 - [x] Task 3.3: Build the blog listing page
 - [x] Task 3.4: Build the blog post detail page
-- [ ] Task 3.5: Style markdown / prose content
+- [x] Task 3.5: Style markdown / prose content
 
 ## Phase 4 — Decap CMS Integration
 - [ ] Task 4.1: Add Decap CMS admin page
