@@ -1,7 +1,121 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+
+const latestPosts = [
+  {
+    slug: 'automating-server-setup-with-bash',
+    title: 'Automating Server Setup with Bash',
+    date: '2025-12-15',
+    description: 'A deep dive into writing idempotent Bash scripts for bootstrapping fresh Linux servers in minutes.',
+    tags: ['scripting', 'linux', 'automation'],
+  },
+  {
+    slug: 'python-cli-tools-with-click',
+    title: 'Building CLI Tools with Python & Click',
+    date: '2025-11-28',
+    description: 'How to create polished command-line interfaces in Python using the Click library.',
+    tags: ['python', 'scripting', 'cli'],
+  },
+  {
+    slug: 'dotfiles-management-with-stow',
+    title: 'Dotfiles Management with GNU Stow',
+    date: '2025-11-10',
+    description: 'Keep your config files version-controlled and symlinked across machines with GNU Stow.',
+    tags: ['linux', 'automation', 'dotfiles'],
+  },
+];
+
+function formatDate(dateStr: string) {
+  const d = new Date(dateStr);
+  return d.toLocaleDateString('en-US', { year: 'numeric', month: 'short', day: 'numeric' });
+}
 ---
 
-<BaseLayout title="Script Wizard">
-  <h1 class="text-neon-green text-4xl p-8">Script Wizard</h1>
+<BaseLayout title="Script Wizard — Tech & Scripting Blog">
+  <!-- Hero section -->
+  <section class="max-w-5xl mx-auto px-4 pt-16 pb-12">
+    <div class="border border-neon-green/30 bg-bg-surface/60 p-6 sm:p-10">
+      <p class="text-neon-green/60 text-xs sm:text-sm mb-4 tracking-widest uppercase">// system boot sequence</p>
+      <h1 class="text-neon-green text-2xl sm:text-4xl font-bold tracking-wider mb-2">
+        <span class="typing-line">script_wizard</span><span class="cursor-blink text-neon-cyan">_</span>
+      </h1>
+      <p class="text-text-muted text-sm sm:text-base mt-4 leading-relaxed max-w-2xl">
+        <span class="text-neon-green/60">&gt;</span> Tech, scripting & automation — notes from the terminal.
+      </p>
+      <p class="text-text-muted text-sm sm:text-base mt-2 leading-relaxed max-w-2xl">
+        <span class="text-neon-green/60">&gt;</span> Exploring the craft of writing code that writes itself.
+      </p>
+      <div class="mt-8">
+        <a
+          href="/blog"
+          class="inline-block border border-neon-cyan/60 text-neon-cyan text-sm px-6 py-2 tracking-wide hover:bg-neon-cyan/10 transition-colors"
+        >
+          <span class="text-neon-cyan/60">&gt;</span> browse_posts<span class="text-neon-cyan/40">_</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Latest Posts section -->
+  <section class="max-w-5xl mx-auto px-4 pb-16">
+    <h2 class="text-neon-amber text-sm tracking-widest uppercase mb-6">
+      <span class="text-neon-amber/60">&gt;</span> latest_entries<span class="text-neon-amber/40">_</span>
+    </h2>
+
+    <div class="flex flex-col gap-4">
+      {latestPosts.map((post, i) => (
+        <a href={`/blog/${post.slug}`} class="group block border border-neon-green/20 bg-bg-card/60 p-5 hover:border-neon-cyan/50 transition-colors">
+          <div class="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-2">
+            <div class="flex-1">
+              <h3 class="text-text-primary group-hover:text-neon-cyan transition-colors text-base sm:text-lg">
+                <span class="text-neon-green/40 mr-2">[{String(i).padStart(2, '0')}]</span>{post.title}
+              </h3>
+              <p class="text-text-muted text-sm mt-2 leading-relaxed">{post.description}</p>
+            </div>
+            <time class="text-text-muted/60 text-xs tracking-wide whitespace-nowrap sm:mt-1" datetime={post.date}>
+              {formatDate(post.date)}
+            </time>
+          </div>
+          <div class="mt-3 flex flex-wrap gap-2">
+            {post.tags.map(tag => (
+              <span class="text-neon-green/50 text-xs border border-neon-green/20 px-2 py-0.5">#{tag}</span>
+            ))}
+          </div>
+        </a>
+      ))}
+    </div>
+
+    <div class="mt-8">
+      <a
+        href="/blog"
+        class="text-neon-green text-sm tracking-wide hover:text-neon-cyan transition-colors"
+      >
+        <span class="text-neon-green/60">&gt;</span> view_all_posts<span class="text-neon-green/40">_</span> →
+      </a>
+    </div>
+  </section>
 </BaseLayout>
+
+<style>
+  @keyframes blink {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0; }
+  }
+
+  .cursor-blink {
+    animation: blink 1s step-end infinite;
+  }
+
+  @keyframes typing {
+    from { width: 0; }
+    to { width: 13ch; }
+  }
+
+  .typing-line {
+    display: inline-block;
+    overflow: hidden;
+    white-space: nowrap;
+    width: 13ch;
+    animation: typing 1.5s steps(13) 0.5s both;
+  }
+</style>
