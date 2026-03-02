@@ -38,5 +38,5 @@
 ## Phase 7 — Content & Tone Revision
 - [x] Task 7.1: Revise Footer content (remove Fallout references, add Avangarde attribution)
 - [x] Task 7.2: Revise About page content (remove S.P.E.C.I.A.L., clean up tone)
-- [ ] Task 7.3: Revise Home page content (verify clean after rebrand)
+- [x] Task 7.3: Revise Home page content (verify clean after rebrand)
 - [ ] Task 7.4: Revise 404 page content (cyberpunk-style, no Fallout)
