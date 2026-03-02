@@ -24,7 +24,7 @@
 - [x] Task 4.3: Add Netlify Identity widget to the site
 
 ## Phase 5 — Polish & Deploy Readiness
-- [ ] Task 5.1: Add SEO and OpenGraph meta tags
+- [x] Task 5.1: Add SEO and OpenGraph meta tags
 - [ ] Task 5.2: Add a 404 page
 - [ ] Task 5.3: Create netlify.toml deployment config
 - [ ] Task 5.4: Add a README with setup and usage instructions
