@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+  <rect width="1200" height="630" fill="#0A0A0F"/>
+  <rect x="0" y="0" width="1200" height="4" fill="#39FF14"/>
+  <rect x="0" y="626" width="1200" height="4" fill="#39FF14"/>
+  <rect x="0" y="0" width="4" height="630" fill="#39FF14"/>
+  <rect x="1196" y="0" width="4" height="630" fill="#39FF14"/>
+  <text x="100" y="200" font-family="monospace" font-size="28" fill="#7A7A8A">&gt; cat /etc/motd</text>
+  <text x="100" y="290" font-family="monospace" font-size="72" font-weight="bold" fill="#39FF14">script_wizard</text>
+  <text x="100" y="370" font-family="monospace" font-size="28" fill="#00FFFF">// tech &amp; scripting notes from the terminal</text>
+  <text x="100" y="460" font-family="monospace" font-size="22" fill="#7A7A8A">━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━</text>
+  <text x="100" y="520" font-family="monospace" font-size="22" fill="#FFB000">&gt; topics: scripting | linux | automation | python</text>
+  <rect x="40" y="40" width="1120" height="550" fill="none" stroke="#1A1A2E" stroke-width="1"/>
+</svg>

@@ -28,7 +28,7 @@
 - [x] Task 5.2: Add a 404 page (terminal/cyberpunk-style, no Fallout references)
 - [x] Task 5.3: Create netlify.toml deployment config
 - [x] Task 5.4: Add a README with setup and usage instructions
-- [ ] Task 5.5: Final visual QA pass
+- [x] Task 5.5: Final visual QA pass
 
 ## Phase 6 — Rebrand & Color Overhaul
 - [ ] Task 6.1: Swap primary color from neon-green to neon-amber
