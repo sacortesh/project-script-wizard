@@ -32,7 +32,7 @@
 
 ## Phase 6 — Rebrand & Color Overhaul
 - [x] Task 6.1: Swap primary color from neon-green to neon-amber
-- [ ] Task 6.2: Rename site from "script_wizard" to "thescriptwizard"
+- [x] Task 6.2: Rename site from "script_wizard" to "thescriptwizard"
 - [ ] Task 6.3: Choose and configure domain
 
 ## Phase 7 — Content & Tone Revision
