@@ -12,8 +12,8 @@
 - [x] Task 2.4: Build the About page
 
 ## Phase 3 — Blog System (Astro Content Collections)
-- [ ] Task 3.1: Set up Astro content collections for blog posts
-- [ ] Task 3.2: Create sample blog posts
+- [x] Task 3.1: Set up Astro content collections for blog posts
+- [x] Task 3.2: Create sample blog posts
 - [ ] Task 3.3: Build the blog listing page
 - [ ] Task 3.4: Build the blog post detail page
 - [ ] Task 3.5: Style markdown / prose content
