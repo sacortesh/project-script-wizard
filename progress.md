@@ -6,8 +6,8 @@
 - [x] Task 1.3: Create base layout and global styles
 
 ## Phase 2 — Core Pages & Components
-- [ ] Task 2.1: Build the site header / navigation
-- [ ] Task 2.2: Build the site footer
+- [x] Task 2.1: Build the site header / navigation
+- [x] Task 2.2: Build the site footer
 - [ ] Task 2.3: Build the home page
 - [ ] Task 2.4: Build the About page
 

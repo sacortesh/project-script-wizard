@@ -1,0 +1,46 @@
+---
+const currentYear = new Date().getFullYear();
+---
+
+<footer class="border-t border-neon-green/40 bg-bg-surface/80 mt-auto">
+  <!-- ASCII art decorative element -->
+  <div class="max-w-5xl mx-auto px-4 pt-6 pb-2">
+    <pre class="text-neon-green/30 text-[10px] leading-tight select-none hidden sm:block" aria-hidden="true">{`
+ ╔══════════════════════════════════════════════════════════╗
+ ║  VAULT-TEC TERMINAL v4.2.0  ║  STATUS: OPERATIONAL      ║
+ ╠══════════════════════════════════════════════════════════╣
+ ║  > SIGNAL STRENGTH ████████████░░░░ 74%                  ║
+ ║  > UPLINK .............. CONNECTED                       ║
+ ╚══════════════════════════════════════════════════════════╝`}
+    </pre>
+  </div>
+
+  <div class="max-w-5xl mx-auto px-4 pb-6 flex flex-col sm:flex-row items-center justify-between gap-4">
+    <!-- Copyright -->
+    <p class="text-text-muted text-xs tracking-wide">
+      <span class="text-neon-green/60">&gt;</span> &copy; {currentYear} script_wizard<span class="text-neon-green/40">_</span> <span class="text-text-muted/60">// all rights reserved</span>
+    </p>
+
+    <!-- Social links -->
+    <nav class="flex items-center gap-4" aria-label="Social links">
+      <a
+        href="https://github.com"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="text-text-muted hover:text-neon-cyan transition-colors text-sm tracking-wide"
+        aria-label="GitHub"
+      >
+        <span class="text-neon-green/60">&gt;</span> github<span class="text-neon-green/40">_</span>
+      </a>
+      <a
+        href="https://x.com"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="text-text-muted hover:text-neon-cyan transition-colors text-sm tracking-wide"
+        aria-label="X (Twitter)"
+      >
+        <span class="text-neon-green/60">&gt;</span> x<span class="text-neon-green/40">_</span>
+      </a>
+    </nav>
+  </div>
+</footer>
