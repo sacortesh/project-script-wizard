@@ -1,0 +1,205 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { getCollection, render } from 'astro:content';
+
+export async function getStaticPaths() {
+  const posts = await getCollection('blog', ({ data }) => !data.draft);
+  return posts.map((post) => ({
+    params: { id: post.id },
+    props: { post },
+  }));
+}
+
+const { post } = Astro.props;
+const { Content } = await render(post);
+
+function formatDate(date: Date) {
+  return date.toLocaleDateString('en-US', { year: 'numeric', month: 'short', day: 'numeric' });
+}
+---
+
+<BaseLayout title={`${post.data.title} — Script Wizard`}>
+  <article class="max-w-3xl mx-auto px-4 pt-16 pb-16">
+    <!-- Post header -->
+    <header class="border border-neon-green/30 bg-bg-surface/60 p-6 sm:p-8 mb-8">
+      <p class="text-neon-green/60 text-xs sm:text-sm mb-3 tracking-widest uppercase">// post</p>
+      <h1 class="text-neon-green text-xl sm:text-3xl font-bold tracking-wider leading-tight">
+        <span class="text-neon-green/60">&gt;</span> {post.data.title}<span class="cursor-blink text-neon-cyan">_</span>
+      </h1>
+      <div class="mt-4 flex flex-col sm:flex-row sm:items-center gap-3 text-sm">
+        <time class="text-text-muted/60 text-xs tracking-wide" datetime={post.data.date.toISOString()}>
+          {formatDate(post.data.date)}
+        </time>
+        <div class="flex flex-wrap gap-2">
+          {post.data.tags.map((tag: string) => (
+            <span class="text-neon-green/50 text-xs border border-neon-green/20 px-2 py-0.5">#{tag}</span>
+          ))}
+        </div>
+      </div>
+      <p class="text-text-muted text-sm mt-4 leading-relaxed">{post.data.description}</p>
+    </header>
+
+    <!-- Post content -->
+    <div class="post-content border border-neon-green/10 bg-bg-card/40 p-6 sm:p-8">
+      <Content />
+    </div>
+
+    <!-- Back to blog -->
+    <div class="mt-10 border-t border-neon-green/10 pt-6">
+      <a
+        href="/blog"
+        class="text-neon-green text-sm tracking-wide hover:text-neon-cyan transition-colors"
+      >
+        <span class="text-neon-green/60">&gt;</span> cd /blog<span class="text-neon-green/40">_</span> →
+      </a>
+    </div>
+  </article>
+</BaseLayout>
+
+<style>
+  @keyframes blink {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0; }
+  }
+
+  .cursor-blink {
+    animation: blink 1s step-end infinite;
+  }
+
+  /* Prose styling for rendered markdown */
+  .post-content :global(h2) {
+    color: #00FFFF;
+    font-size: 1.25rem;
+    font-weight: 700;
+    margin-top: 2rem;
+    margin-bottom: 0.75rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid rgba(57, 255, 20, 0.15);
+  }
+
+  .post-content :global(h3) {
+    color: #FFB000;
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin-top: 1.5rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .post-content :global(h4) {
+    color: #E0E0E0;
+    font-size: 1rem;
+    font-weight: 600;
+    margin-top: 1.25rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .post-content :global(p) {
+    color: #E0E0E0;
+    line-height: 1.75;
+    margin-bottom: 1rem;
+  }
+
+  .post-content :global(a) {
+    color: #00FFFF;
+    text-decoration: underline;
+    text-underline-offset: 2px;
+  }
+
+  .post-content :global(a:hover) {
+    color: #39FF14;
+  }
+
+  .post-content :global(strong) {
+    color: #FFB000;
+    font-weight: 600;
+  }
+
+  .post-content :global(em) {
+    color: #FF00FF;
+    font-style: italic;
+  }
+
+  .post-content :global(ul),
+  .post-content :global(ol) {
+    margin-bottom: 1rem;
+    padding-left: 1.5rem;
+  }
+
+  .post-content :global(ul) {
+    list-style: none;
+  }
+
+  .post-content :global(ul li) {
+    position: relative;
+    padding-left: 1rem;
+    margin-bottom: 0.5rem;
+    color: #E0E0E0;
+    line-height: 1.75;
+  }
+
+  .post-content :global(ul li::before) {
+    content: '>';
+    position: absolute;
+    left: 0;
+    color: rgba(57, 255, 20, 0.5);
+  }
+
+  .post-content :global(ol) {
+    list-style: decimal;
+  }
+
+  .post-content :global(ol li) {
+    margin-bottom: 0.5rem;
+    color: #E0E0E0;
+    line-height: 1.75;
+  }
+
+  .post-content :global(ol li::marker) {
+    color: rgba(57, 255, 20, 0.5);
+  }
+
+  .post-content :global(blockquote) {
+    border-left: 3px solid #FFB000;
+    padding-left: 1rem;
+    margin: 1.5rem 0;
+    color: #7A7A8A;
+    font-style: italic;
+  }
+
+  .post-content :global(code) {
+    background-color: rgba(57, 255, 20, 0.08);
+    color: #39FF14;
+    padding: 0.15rem 0.4rem;
+    font-size: 0.875em;
+  }
+
+  .post-content :global(pre) {
+    background-color: #0A0A0F !important;
+    border: 1px solid rgba(57, 255, 20, 0.2);
+    padding: 1rem 1.25rem;
+    margin: 1.5rem 0;
+    overflow-x: auto;
+    font-size: 0.875rem;
+    line-height: 1.6;
+  }
+
+  .post-content :global(pre code) {
+    background: none;
+    padding: 0;
+    color: #39FF14;
+    font-size: inherit;
+  }
+
+  .post-content :global(hr) {
+    border: none;
+    border-top: 1px solid rgba(57, 255, 20, 0.2);
+    margin: 2rem 0;
+  }
+
+  .post-content :global(img) {
+    max-width: 100%;
+    height: auto;
+    border: 1px solid rgba(57, 255, 20, 0.2);
+    margin: 1.5rem 0;
+  }
+</style>
