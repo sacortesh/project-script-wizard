@@ -13,10 +13,39 @@ collections:
     slug: "{{slug}}"
     extension: "md"
     fields:
-      - { label: "Title", name: "title", widget: "string" }
-      - { label: "Description", name: "description", widget: "string" }
-      - { label: "Date", name: "date", widget: "datetime", date_format: "YYYY-MM-DD", time_format: false }
-      - { label: "Tags", name: "tags", widget: "list", default: [] }
-      - { label: "Draft", name: "draft", widget: "boolean", default: false }
-      - { label: "Featured Image", name: "image", widget: "image", required: false }
-      - { label: "Body", name: "body", widget: "markdown" }
+      - label: "Title"
+        name: "title"
+        widget: "string"
+        hint: "The post title displayed on the blog listing and detail pages."
+      - label: "Description"
+        name: "description"
+        widget: "text"
+        hint: "A short summary shown on the blog listing page and in SEO meta tags."
+      - label: "Publish Date"
+        name: "date"
+        widget: "datetime"
+        date_format: "YYYY-MM-DD"
+        time_format: false
+        format: "YYYY-MM-DD"
+        hint: "Publication date used for sorting posts (newest first)."
+      - label: "Tags"
+        name: "tags"
+        widget: "list"
+        allow_add: true
+        default: []
+        hint: "Comma-separated tags (e.g. scripting, python, linux)."
+      - label: "Draft"
+        name: "draft"
+        widget: "boolean"
+        default: false
+        hint: "Draft posts are hidden from the public blog listing."
+      - label: "Featured Image"
+        name: "image"
+        widget: "image"
+        required: false
+        hint: "Optional hero image displayed at the top of the post."
+        media_folder: "/public/images/uploads"
+        public_folder: "/images/uploads"
+      - label: "Body"
+        name: "body"
+        widget: "markdown"

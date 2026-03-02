@@ -19,8 +19,8 @@
 - [x] Task 3.5: Style markdown / prose content
 
 ## Phase 4 — Decap CMS Integration
-- [ ] Task 4.1: Add Decap CMS admin page
-- [ ] Task 4.2: Configure Decap CMS fields to match blog schema
+- [x] Task 4.1: Add Decap CMS admin page
+- [x] Task 4.2: Configure Decap CMS fields to match blog schema
 - [ ] Task 4.3: Add Netlify Identity widget to the site
 
 ## Phase 5 — Polish & Deploy Readiness
