@@ -2,8 +2,8 @@
 
 ## Phase 1 — Project Scaffolding
 - [x] Task 1.1: Initialize Astro project
-- [ ] Task 1.2: Install and configure Tailwind CSS
-- [ ] Task 1.3: Create base layout and global styles
+- [x] Task 1.2: Install and configure Tailwind CSS
+- [x] Task 1.3: Create base layout and global styles
 
 ## Phase 2 — Core Pages & Components
 - [ ] Task 2.1: Build the site header / navigation
