@@ -1,8 +1,8 @@
-# PRD — Personal Blog: Cyberpunk / Coder / Fallout Theme
+# PRD — Personal Blog: Cyberpunk / Coder Theme
 
 ## Overview
 
-A minimalist personal blog focused on **tech & scripting** content. The site uses a **cyberpunk / coder / Fallout** aesthetic: sharp corners (no rounded corners), neon colors, monospace typography, terminal-inspired UI elements. Content is managed via **Decap CMS** (headless, Git-based) so new posts can be added without code changes.
+A minimalist personal blog focused on **tech & scripting** content. The site uses a **cyberpunk / coder** aesthetic: sharp corners (no rounded corners), neon colors (amber primary), monospace typography, terminal-inspired UI elements. Content is managed via **Decap CMS** (headless, Git-based) so new posts can be added without code changes. The tone is relaxed and approachable — not silly or gimmicky.
 
 ## Tech Stack
 
@@ -166,3 +166,56 @@ A minimalist personal blog focused on **tech & scripting** content. The site use
 - Test mobile responsiveness
 - Verify blog listing and detail pages render correctly
 - Verify Decap CMS admin loads and shows collections
+
+---
+
+## Phase 6 — Rebrand & Color Overhaul
+
+### Task 6.1: Swap primary color from neon-green to neon-amber
+- Update `tailwind.config.mjs`: swap the roles of `neon-green` and `neon-amber` so amber (`#FFB000`) becomes the dominant/primary accent color and green (`#39FF14`) becomes the secondary/highlight color
+- Update the `typography` > `prose-cyberpunk` theme in `tailwind.config.mjs` accordingly (bullets, counters, code, borders, hr, links hover, etc.)
+- Audit all component files and pages for hardcoded `neon-green` classes — replace with `neon-amber` where it's used as primary accent (borders, prompt chars `>`, headings, cursor blink underscores, tags)
+- Keep `neon-cyan` as-is for interactive/hover states and `neon-magenta` for emphasis
+- Files to update: `Header.astro`, `Footer.astro`, `index.astro`, `about.astro`, `blog/index.astro`, `blog/[id].astro`, `global.css`
+
+### Task 6.2: Rename site from "script_wizard" to "thescriptwizard"
+- Update display name in `Header.astro` logo: `script_wizard` → `thescriptwizard`
+- Update `Footer.astro` copyright text
+- Update `BaseLayout.astro` default title prop
+- Update `index.astro` hero heading, typing animation (`width` keyframes from 13ch to 15ch), and page title
+- Update `about.astro` page title
+- Update `blog/index.astro` and `blog/[id].astro` page titles
+- Update `SEO.astro` default description to reference "thescriptwizard"
+- Update `astro.config.mjs` `site` URL (placeholder until domain is chosen)
+
+### Task 6.3: Choose and configure domain
+- Domain candidates: `thescriptwizard.dev`, `thescriptwizard.sh`, `thescriptwizard.io`, `thescriptwizard.ai`
+- Recommendation: `.dev` (cheap, credible for a dev blog, enforces HTTPS). Fallback: `.sh` (short, unix-relevant, affordable)
+- Once decided, update `astro.config.mjs` `site` field to the final domain
+- Note in README how to configure the custom domain in Netlify
+
+---
+
+## Phase 7 — Content & Tone Revision
+
+### Task 7.1: Revise Footer content
+- Remove the Vault-Tec / Fallout ASCII art block entirely
+- Replace with a minimal, clean terminal-inspired decorative line (e.g., a simple `═══` border or subtle ASCII pattern — no game references)
+- Add attribution line at the bottom: "Made with love by Avangarde Software Solutions"
+- Keep copyright, social links, and terminal prompt styling
+
+### Task 7.2: Revise About page content
+- Remove the S.P.E.C.I.A.L. stats section (Fallout reference) — replace with a clean skill/proficiency display (e.g., labeled progress bars or a simple grid) with the same data but no Vault-Tec/Fallout branding
+- Remove "Vault-Tec Aptitude Assessment" subtitle
+- Revise bio text: keep relaxed, first-person tone but remove "wanderer" and any Fallout-flavored language
+- Keep "equipped_tools" and "open_channel" sections as-is (they're already clean)
+- Ensure all section headings and accent colors use the new amber primary
+
+### Task 7.3: Revise Home page content
+- Update hero tagline/comments to remove any Fallout references (currently clean, but verify after color swap)
+- Ensure "// system boot sequence" comment and terminal feel remain (these are cyberpunk, not Fallout)
+- Verify latest posts section uses new primary color
+
+### Task 7.4: Revise 404 page content (when built)
+- Task 5.2 originally called for a "Fallout-style" 404 page — update spec to be terminal/cyberpunk-style instead: `> ERROR 404: PAGE NOT FOUND` with a retro terminal feel, no Vault-Tec or Fallout references
+- Keep "link back to home" requirement
