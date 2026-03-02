@@ -16,6 +16,7 @@ const { title = 'Script Wizard' } = Astro.props;
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <title>{title}</title>
+    <script is:inline src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
   </head>
   <body class="bg-bg-dark text-text-primary font-mono min-h-screen relative">
     <div class="scanline-overlay"></div>
@@ -26,5 +27,16 @@ const { title = 'Script Wizard' } = Astro.props;
       </main>
       <Footer />
     </div>
+    <script is:inline>
+      if (window.netlifyIdentity) {
+        window.netlifyIdentity.on("init", function(user) {
+          if (!user) {
+            window.netlifyIdentity.on("login", function() {
+              document.location.href = "/admin/";
+            });
+          }
+        });
+      }
+    </script>
   </body>
 </html>

@@ -21,7 +21,7 @@
 ## Phase 4 — Decap CMS Integration
 - [x] Task 4.1: Add Decap CMS admin page
 - [x] Task 4.2: Configure Decap CMS fields to match blog schema
-- [ ] Task 4.3: Add Netlify Identity widget to the site
+- [x] Task 4.3: Add Netlify Identity widget to the site
 
 ## Phase 5 — Polish & Deploy Readiness
 - [ ] Task 5.1: Add SEO and OpenGraph meta tags
