@@ -3,7 +3,7 @@ import tailwind from '@astrojs/tailwind';
 
 // https://astro.build/config
 export default defineConfig({
-  site: 'https://thescriptwizard.netlify.app',
+  site: 'https://thescriptwizard.dev',
   output: 'static',
   integrations: [tailwind()],
   image: {

@@ -95,7 +95,18 @@ Your post content here…
 
 ### Custom Domain
 
-To use a custom domain, go to **Site settings > Domain management > Add custom domain** in the Netlify dashboard and follow the DNS configuration instructions.
+The site is configured to use `thescriptwizard.dev` as its production domain.
+
+To set it up:
+
+1. In the Netlify dashboard, go to **Site settings > Domain management > Add custom domain**.
+2. Enter `thescriptwizard.dev` and click **Verify**.
+3. Configure DNS with your domain registrar:
+   - **Option A (recommended):** Point your domain's nameservers to Netlify's DNS servers (shown in the dashboard). Netlify will manage DNS and auto-provision an SSL certificate.
+   - **Option B:** Add a CNAME record pointing `www` to your Netlify subdomain (e.g., `thescriptwizard.netlify.app`) and an ALIAS/ANAME record for the apex domain.
+4. Netlify automatically provisions and renews HTTPS certificates via Let's Encrypt. The `.dev` TLD enforces HTTPS by default (HSTS preloaded).
+
+If you choose a different domain, update the `site` field in `astro.config.mjs` to match.
 
 ## CMS Admin Panel
 
@@ -118,7 +129,7 @@ Decap CMS uses Netlify Identity for authentication and Git Gateway to commit cha
 
 ### Access the CMS
 
-Navigate to `https://your-site.netlify.app/admin/` and log in with your Netlify Identity credentials. From there you can create, edit, and publish blog posts without touching code.
+Navigate to `https://thescriptwizard.dev/admin/` and log in with your Netlify Identity credentials. From there you can create, edit, and publish blog posts without touching code.
 
 ## License
 
