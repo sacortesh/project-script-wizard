@@ -11,7 +11,7 @@ tags:
   - bash
   - meta
 draft: false
-image: /images/uploads/ai-and-dev-2.png
+image: /images/uploads/rsz_ai-and-dev_2.png
 ---
 >**TL;DR**  
 AI goes beyond automation—it's a meta tool that enhances your un-automatizable work like creative problem-solving and manual routines, including using it once to build lightweight bash/Python scripts that run traditionally. By crafting custom AI assistants for time management, structured commits, Jira links, checklists, and efficient scripts, you stay focused without constant AI dependency. This hybrid approach empowers developers to work smarter, blending human intuition with targeted AI boosts for sustainable productivity.
