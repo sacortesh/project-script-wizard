@@ -1,28 +1,8 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 
+// TODO this needs to be populated elsewhere
 const latestPosts = [
-  {
-    slug: 'automating-server-setup-with-bash',
-    title: 'Automating Server Setup with Bash',
-    date: '2025-12-15',
-    description: 'A deep dive into writing idempotent Bash scripts for bootstrapping fresh Linux servers in minutes.',
-    tags: ['scripting', 'linux', 'automation'],
-  },
-  {
-    slug: 'python-cli-tools-with-click',
-    title: 'Building CLI Tools with Python & Click',
-    date: '2025-11-28',
-    description: 'How to create polished command-line interfaces in Python using the Click library.',
-    tags: ['python', 'scripting', 'cli'],
-  },
-  {
-    slug: 'dotfiles-management-with-stow',
-    title: 'Dotfiles Management with GNU Stow',
-    date: '2025-11-10',
-    description: 'Keep your config files version-controlled and symlinked across machines with GNU Stow.',
-    tags: ['linux', 'automation', 'dotfiles'],
-  },
 ];
 
 function formatDate(dateStr: string) {
