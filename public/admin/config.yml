@@ -2,7 +2,7 @@
 backend:
   name: git-gateway
   repo: sacortesh/project-script-wizard
-  branch: main
+  branch: master
   auth_type: pkce
   base_url: https://auth.decapbridge.com
   auth_endpoint: /sites/4044e2ba-45de-4ced-8b74-30902b618871/pkce
