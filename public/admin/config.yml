@@ -73,7 +73,7 @@ collections:
         widget: "image"
         required: false
         hint: "Optional hero image displayed at the top of the post."
-        media_folder: "/public/images/uploads"
+        media_folder: "public/images/uploads"
         public_folder: "/images/uploads"
       - label: "Body"
         name: "body"

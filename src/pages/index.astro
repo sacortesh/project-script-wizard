@@ -5,6 +5,13 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 const latestPosts = [
 ];
 
+import { getCollection } from 'astro:content';
+
+const allPosts = await getCollection('blog', ({ data }) => !data.draft);
+const posts = allPosts
+  .sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf())
+  .slice(0, 3);
+  
 function formatDate(dateStr: string) {
   const d = new Date(dateStr);
   return d.toLocaleDateString('en-US', { year: 'numeric', month: 'short', day: 'numeric' });
@@ -43,21 +50,21 @@ function formatDate(dateStr: string) {
     </h2>
 
     <div class="flex flex-col gap-4">
-      {latestPosts.map((post, i) => (
-        <a href={`/blog/${post.slug}`} class="group block border border-neon-amber/20 bg-bg-card/60 p-5 hover:border-neon-cyan/50 transition-colors">
+      {posts.map((post, i) => (
+        <a href={`/blog/${post.id}`} class="group block border border-neon-amber/20 bg-bg-card/60 p-5 hover:border-neon-cyan/50 transition-colors">
           <div class="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-2">
             <div class="flex-1">
               <h3 class="text-text-primary group-hover:text-neon-cyan transition-colors text-base sm:text-lg">
-                <span class="text-neon-amber/40 mr-2">[{String(i).padStart(2, '0')}]</span>{post.title}
+                <span class="text-neon-amber/40 mr-2">[{String(i).padStart(2, '0')}]</span>{post.data.title}
               </h3>
-              <p class="text-text-muted text-sm mt-2 leading-relaxed">{post.description}</p>
+              <p class="text-text-muted text-sm mt-2 leading-relaxed">{post.data.description}</p>
             </div>
-            <time class="text-text-muted/60 text-xs tracking-wide whitespace-nowrap sm:mt-1" datetime={post.date}>
-              {formatDate(post.date)}
+            <time class="text-text-muted/60 text-xs tracking-wide whitespace-nowrap sm:mt-1" datetime={post.data.date.toISOString()}>
+              {formatDate(post.data.date)}
             </time>
           </div>
           <div class="mt-3 flex flex-wrap gap-2">
-            {post.tags.map(tag => (
+            {post.data.tags.map(tag => (
               <span class="text-neon-amber/50 text-xs border border-neon-amber/20 px-2 py-0.5">#{tag}</span>
             ))}
           </div>

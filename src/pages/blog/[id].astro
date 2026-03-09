@@ -39,6 +39,13 @@ function formatDate(date: Date) {
       <p class="text-text-muted text-sm mt-4 leading-relaxed">{post.data.description}</p>
     </header>
 
+    <!-- Featured image -->
+    {post.data.image && (
+      <div class="mb-8 border border-neon-amber/20 overflow-hidden">
+        <img src={post.data.image} alt={post.data.title} class="w-full h-auto block" />
+      </div>
+    )}
+
     <!-- Post content -->
     <div class="prose prose-cyberpunk border border-neon-amber/10 bg-bg-card/40 p-6 sm:p-8">
       <Content />
